@@ -12,10 +12,10 @@ public class BuildingAPI {
     @Autowired
     private BuildingService buildingService;
     @GetMapping(value = "/api/building")
-    public List<BuildingDTO> getBuilding(@RequestParam(name = "name", required = false) String name,
+    public List<BuildingDTO> getBuilding(@RequestParam(name = "name", required = false) String nameBuilding,
                                          @RequestParam(name = "districtId", required = false) String districtId,
                                          @RequestParam(name = "typeCode", required = false) List<String> typeCode){
-        List<BuildingDTO> result = buildingService.findAll(name, districtId);
+        List<BuildingDTO> result = buildingService.findAll(nameBuilding, districtId);
 
         return result;
     }
